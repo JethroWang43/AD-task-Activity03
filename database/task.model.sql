@@ -1,4 +1,4 @@
--- Active: 1752557012198@@127.0.0.1@5555
+-- Active: 1752557012198@@127.0.0.1@5555@calendardb
 CREATE TABLE IF NOT EXISTS tasks (
     id uuid NOT NULL PRIMARY KEY DEFAULT gen_random_uuid(),
     meeting_id uuid REFERENCES meeting(id),
