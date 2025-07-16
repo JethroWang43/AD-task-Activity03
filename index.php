@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 require_once BASE_PATH . '/vendor/autoload.php';
+require_once HANDLERS_PATH . '/flashMessage.handler.php'; // ✅ Include the handler
 ?>
 
 <link rel="stylesheet" href="/assets/css/style.css">
@@ -10,17 +11,7 @@ require_once BASE_PATH . '/vendor/autoload.php';
     <section class="login-box">
         <h2>Login to Your Account</h2>
 
-        <?php if (isset($_GET['logout']) && $_GET['logout'] === 'success'): ?>
-            <div class="success-message">✅ You have been logged out successfully.</div>
-        <?php endif; ?>
-
-        <?php if (isset($_GET['error'])): ?>
-            <div class="error-message"><?= htmlspecialchars($_GET['error']) ?></div>
-        <?php endif; ?>
-
-        <?php if (isset($_GET['success'])): ?>
-            <div class="success-message"><?= htmlspecialchars($_GET['success']) ?></div>
-        <?php endif; ?>
+        <?php renderFlashMessages(); ?> 
 
         <form action="/handlers/auth.handler.php" method="POST">
             <label for="username">Username</label>
