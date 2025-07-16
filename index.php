@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 require_once BASE_PATH . '/vendor/autoload.php';
-require_once HANDLERS_PATH . '/flashMessage.handler.php'; // ✅ Include the handler
+require_once HANDLERS_PATH . '/flashMessage.handler.php'; 
 ?>
 
 <link rel="stylesheet" href="/assets/css/style.css">
